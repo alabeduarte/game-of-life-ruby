@@ -1,4 +1,6 @@
 # Conway's Game of Life
+[![Build
+Status](https://travis-ci.org/alabeduarte/game-of-life-ruby.svg?branch=master)](https://travis-ci.org/alabeduarte/game-of-life-ruby)
 
 *The description of this kata came from
 [wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)*
