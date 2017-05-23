@@ -19,14 +19,9 @@ module GameOfLife
     end
 
     def render
-      str = ''
-
-      Matrix[state].each do |element|
-        str += element.join
-        str += "\n"
+      Matrix[state].reduce('') do |previous, current|
+        previous + current.join + "\n"
       end
-
-      str
     end
 
     private
