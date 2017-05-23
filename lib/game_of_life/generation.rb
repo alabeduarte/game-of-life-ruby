@@ -4,28 +4,29 @@ require 'matrix'
 
 module GameOfLife
   class Generation
-    def initialize(state)
-      @state = state.to_a
+    def initialize(matrix)
+      @matrix = matrix.to_a
     end
 
     def next
       new_matrix = Matrix[
-        ['#', '#'],
-        ['#', '#'],
-        ['.', '.']
+        ['.', '.', '.', '.', '.', '.', '.', '.'],
+        ['.', '.', '.', '#', '#', '.', '.', '.'],
+        ['.', '.', '.', '#', '#', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.', '.', '.'],
       ]
 
       GameOfLife::Generation.new(new_matrix)
     end
 
     def render
-      Matrix[state].reduce('') do |previous, current|
+      Matrix[matrix].reduce('') do |previous, current|
         previous + current.join + "\n"
       end
     end
 
     private
 
-    attr_reader :state
+    attr_reader :matrix
   end
 end
